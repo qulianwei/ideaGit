@@ -20,7 +20,10 @@ public interface DemoMapper {
 	@Update(value="update t_supplier set supName=#{sup.supName},supPhone=#{sup.supPhone},supAreaId=#{sup.supAreaId},supGoods=#{sup.supGoods},supMoney=#{sup.supMoney},status=#{sup.status} where supId=#{sup.supId}")
 	void updateSupplier(@Param(value = "sup") Supplier sup);
 
+	@ResultType(LinkedHashMap.class)
 	@Delete(value="DELETE FROM t_supplier where supId=#{sup.supId}")
 	void deleteSupplier(@Param(value = "sup") Supplier sup);
+
+
 
 }
